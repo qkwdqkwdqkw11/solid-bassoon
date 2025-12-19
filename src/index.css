@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 340 10% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 340 10% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 340 10% 20%;
+
+    --primary: 346 77% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 340 60% 96%;
+    --secondary-foreground: 340 10% 20%;
+
+    --muted: 340 20% 96%;
+    --muted-foreground: 340 10% 50%;
+
+    --accent: 346 77% 62%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 340 30% 90%;
+    --input: 340 30% 90%;
+    --ring: 346 77% 62%;
+
+    --radius: 0.75rem;
+
+    /* Custom KittyCraft tokens */
+    --kitty-pink: 346 77% 62%;
+    --kitty-pink-light: 346 77% 95%;
+    --kitty-pink-dark: 346 77% 50%;
+    --kitty-blue: 200 80% 60%;
+    --kitty-purple: 280 60% 70%;
+    --kitty-snow: 200 30% 98%;
+    --hero-gradient: linear-gradient(180deg, hsl(200 30% 98%) 0%, hsl(340 60% 96%) 100%);
+    --card-shadow: 0 4px 20px -4px hsl(346 77% 62% / 0.15);
+    --glow-pink: 0 0 40px hsl(346 77% 62% / 0.3);
+  }
+
+  .dark {
+    --background: 240 10% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 240 10% 12%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 240 10% 12%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 346 77% 62%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 10% 18%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 240 10% 18%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 346 77% 62%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 62.8% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 346 77% 62%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary to-[hsl(var(--kitty-purple))] bg-clip-text text-transparent;
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-snow {
+    animation: snow 10s linear infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes snow {
+    0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0.3; }
+  }
+
+  @keyframes sparkle {
+    0%, 100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+
+  .animate-sparkle {
+    animation: sparkle 2s ease-in-out infinite;
+  }
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* arka plan */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffacda; /* scroll rengi */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #ff4ed9; /* hover rengi */
+   box-shadow: 
+     0 0 5px #ff2eee,
+      0 0 5px #ff2eee,
+       0 0 5px #ff2eee;
+}
